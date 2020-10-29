@@ -1,7 +1,6 @@
 package JavaFx;
 
 import Dictionary.DisplayInfo;
-import com.darkprograms.speech.translator.GoogleTranslate;
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 import javafx.collections.FXCollections;
@@ -25,41 +24,47 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-
 public class Controller implements Initializable {
-
-
     DisplayInfo displayInfo = new DisplayInfo();
-    @FXML private ListView<String> listView;
-    @FXML private TextField textField;
-    @FXML private WebView webView;
-    @FXML private Button add;
-    @FXML private Button delete;
-    @FXML private Button edit;
-    @FXML private Button clearButton;
-    @FXML private Button speakButton;
-    @FXML private Button API;
+    @FXML
+    private ListView<String> listView;
+    @FXML
+    private TextField textField;
+    @FXML
+    private WebView webView;
+    @FXML
+    private Button add;
+    @FXML
+    private Button delete;
+    @FXML
+    private Button edit;
+    @FXML
+    private Button clearButton;
+    @FXML
+    private Button speakButton;
+    @FXML
+    private Button API;
     private ObservableList<String> list = FXCollections.observableArrayList();
 
-    public void Search(KeyEvent event){
-
-        //listView.getItems().clear();
+    public void Search(KeyEvent event) {
+//        listView.getItems().clear();
         ArrayList<String> arrayList = displayInfo.Searcher(textField.getText());
         listView.getItems().setAll(arrayList);
         webView.getEngine().loadContent("");
     }
 
-    public void clickMouse(MouseEvent event){
+    public void clickMouse(MouseEvent event) {
         textField.setText(listView.getSelectionModel().getSelectedItem());
         String S = listView.getSelectionModel().getSelectedItems().toString();
         String word_english = S.substring(1, S.length() - 1);
         String word_vietnamese = displayInfo.lookUp(word_english);
-        if (!word_vietnamese.equals(null)){
+        if (word_vietnamese != null) {
             WebEngine webEngine = webView.getEngine();
             webEngine.loadContent(word_vietnamese);
         }
     }
-    public void Add(ActionEvent event){
+
+    public void Add(ActionEvent event) {
         Stage primaryStage = new Stage();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("addword.fxml"));
@@ -71,7 +76,7 @@ public class Controller implements Initializable {
         }
     }
 
-    public void Delete(ActionEvent event){
+    public void Delete(ActionEvent event) {
         Stage primaryStage = new Stage();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("deleteword.fxml"));
@@ -83,7 +88,7 @@ public class Controller implements Initializable {
         }
     }
 
-    public void Edit(ActionEvent event){
+    public void Edit(ActionEvent event) {
         Stage primaryStage = new Stage();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("editword.fxml"));
@@ -95,7 +100,7 @@ public class Controller implements Initializable {
         }
     }
 
-    public void translate(ActionEvent event){
+    public void translate(ActionEvent event) {
         Stage primaryStage = new Stage();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("translateapi.fxml"));
@@ -112,7 +117,6 @@ public class Controller implements Initializable {
             textField.setText("");
             listView.getItems().clear();
             webView.getEngine().loadContent("");
-
         }
         if (e.getSource() == speakButton) {
             Voice voice;//Creating object of Voice class
@@ -126,15 +130,12 @@ public class Controller implements Initializable {
                 voice.setVolume(10);//Setting the volume of the voice
                 voice.speak(textField.getText());//Calling speak() method
             } catch (Exception ex) {
-
                 ex.printStackTrace();
             }
-
         }
-
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 }
