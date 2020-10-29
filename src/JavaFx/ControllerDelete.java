@@ -1,6 +1,5 @@
 package JavaFx;
 
-import Dictionary.AddWord;
 import Dictionary.DeleteWord;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,8 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class ControllerDelete {
-    @FXML private TextField textEnglish;
-    @FXML private Button delete;
+    @FXML
+    private TextField textEnglish;
+    @FXML
+    private Button delete;
 
     public void deleteWord(ActionEvent event) {
         if (!textEnglish.getText().equals("")) {
@@ -21,8 +22,7 @@ public class ControllerDelete {
             alert.setTitle("Congratulations");
             alert.setContentText("Bạn đã xóa thành công!");
             alert.show();
-        }
-        else{
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
             alert.setContentText("Mời nhập từ");
