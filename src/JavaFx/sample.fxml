@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="647.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFx.Controller">
+   <children>
+      <ImageView fitHeight="704.0" fitWidth="1026.0" layoutX="-96.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/lielahti-2.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="textField" layoutX="22.0" layoutY="31.0" onKeyReleased="#Search" opacity="0.8" prefHeight="48.0" prefWidth="200.0" promptText="Nhập từ tìm kiếm" />
+      <ListView fx:id="listView" layoutX="22.0" layoutY="87.0" onMouseClicked="#clickMouse" opacity="0.8" prefHeight="570.0" prefWidth="200.0" />
+      <WebView fx:id="webView" layoutX="401.0" layoutY="141.0" opacity="0.8" prefHeight="518.0" prefWidth="422.0" />
+      <Button fx:id="add" layoutX="265.0" layoutY="265.0" mnemonicParsing="false" onAction="#Add" prefHeight="74.0" prefWidth="90.0">
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/flat-style-circle-add_icon-icons.com_66944.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="delete" layoutX="264.0" layoutY="343.0" mnemonicParsing="false" onAction="#Delete" prefHeight="82.0" prefWidth="78.0">
+         <graphic>
+            <ImageView fitHeight="71.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/47-512.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="edit" layoutX="264.0" layoutY="425.0" mnemonicParsing="false" onAction="#Edit" prefHeight="82.0" prefWidth="92.0">
+         <graphic>
+            <ImageView fitHeight="68.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/79-512.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="API" layoutX="265.0" layoutY="187.0" mnemonicParsing="false" onAction="#translate" prefHeight="78.0" prefWidth="90.0">
+         <graphic>
+            <ImageView fitHeight="67.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/512x512.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="clearButton" layoutX="265.0" layoutY="31.0" mnemonicParsing="false" onAction="#actionPerformed" prefHeight="78.0" prefWidth="90.0">
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/5bf27fbbe176bfcc006531671b05c35a.jpg" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="speakButton" layoutX="265.0" layoutY="109.0" mnemonicParsing="false" onAction="#actionPerformed" prefHeight="78.0" prefWidth="90.0">
+         <graphic>
+            <ImageView fitHeight="72.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/JPortugall_icon_speaker.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ImageView fitHeight="131.0" fitWidth="251.0" layoutX="589.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/image001-1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="131.0" fitWidth="188.0" layoutX="401.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/mydictionary.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="220.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFx.ControllerDelete">
+   <children>
+      <ImageView fitHeight="229.0" fitWidth="358.0" layoutX="-26.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/61WjyrmMpzL._SX466_.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="textEnglish" layoutX="76.0" layoutY="44.0" opacity="0.7" prefHeight="36.0" prefWidth="149.0" promptText="Nhập từ cần xóa" />
+      <Button fx:id="delete" layoutX="117.0" layoutY="124.0" mnemonicParsing="false" onAction="#deleteWord" text="Delete" />
+   </children>
+</AnchorPane>
