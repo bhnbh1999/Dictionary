@@ -1,31 +1,19 @@
 package Dictionary;
 
-import java.sql.*;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBConnection {
 
-
-    public static Connection KetNoi(){
-
+    public static Connection KetNoi() {
         Connection connection = null;
-        String URL = "jdbc:mysql://localhost:3306/dictionary";
-        String user = "root";
-        String pass = "";
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(URL,user,pass);
-
-//            if (connection != null){
-//                System.out.println("Ket noi thanh cong");
-//            }
-           // connection.close();
-        } catch (ClassNotFoundException e) {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/dictionary", "root", "");
+        } catch (ClassNotFoundException | SQLException e) {
             System.out.println("ERROR");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
         }
-
         return connection;
     }
 }
